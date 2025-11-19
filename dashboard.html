@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <h1>Order Management</h1>
+            <div class="header-actions">
+              <button class="btn btn-secondary"><i class="ph-bold ph-export"></i>Export</button>
+              <button class="btn btn-primary">+ New Order</button>
+            </div>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-label">Total Orders<i class="ph-bold ph-caret-right"></i></div>
+              <div class="stat-value">1,247</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Pending<i class="ph-bold ph-caret-right"></i></div>
+              <div class="stat-value">89</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Shipped<i class="ph-bold ph-caret-right"></i></div>
+              <div class="stat-value">456</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Revenue<i class="ph-bold ph-caret-right"></i></div>
+              <div class="stat-value">$48.2K</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <div class="search-box">
+            <i class="ph-bold ph-magnifying-glass"></i>
+            <input type="text" placeholder="Search orders, customers..." />
+          </div>
+          <div class="filter-select">
+            <i class="ph-bold ph-funnel"></i>
+            All Status
+            <i class="ph-bold ph-caret-down"></i>
+          </div>
+            <div class="filter-select">
+                <i class="ph-bold ph-calendar"></i>
+                Last 30 Days
+                <i class="ph-bold ph-caret-down"></i>
+            </div>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="orders-section">
+          <h2>Recent Orders</h2>
+          <div class="orders-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Items</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="active" onclick="toggleSidebar()">
+                  <td data-label="Order ID">#ORD-2847</td>
+                  <td data-label="Customer">Sarah Johnson</td>
+                  <td data-label="Date">Oct 5, 2025</td>
+                  <td data-label="Amount">$285.00</td>
+                  <td data-label="Status">
+                    <span class="status-label status-shipped">Shipped</span>
+                  </td>
+                  <td data-label="Items">3 items</td>
+                </tr>
+                <tr onclick="toggleSidebar()">
+                  <td data-label="Order ID">#ORD-2846</td>
+                  <td data-label="Customer">Michael Chen</td>
+                  <td data-label="Date">Oct 5, 2025</td>
+                  <td data-label="Amount">$142.50</td>
+                  <td data-label="Status">
+                    <span class="status-label status-pending">Pending</span>
+                  </td>
+                  <td data-label="Items">2 items</td>
+                </tr>
+                <tr onclick="toggleSidebar()">
+                  <td data-label="Order ID">#ORD-2845</td>
+                  <td data-label="Customer">Emma Williams</td>
+                  <td data-label="Date">Oct 4, 2025</td>
+                  <td data-label="Amount">$568.00</td>
+                  <td data-label="Status">
+                    <span class="status-label status-delivered">Delivered</span>
+                  </td>
+                  <td data-label="Items">5 items</td>
+                </tr>
+                <tr onclick="toggleSidebar()">
+                  <td data-label="Order ID">#ORD-2844</td>
+                  <td data-label="Customer">James Rodriguez</td>
+                  <td data-label="Date">Oct 4, 2025</td>
+                  <td data-label="Amount">$95.00</td>
+                  <td data-label="Status">
+                    <span class="status-label status-cancelled">Cancelled</span>
+                  </td>
+                  <td data-label="Items">1 item</td>
+                </tr>
+                <tr onclick="toggleSidebar()">
+                  <td data-label="Order ID">#ORD-2843</td>
+                  <td data-label="Customer">Lisa Anderson</td>
+                  <td data-label="Date">Oct 3, 2025</td>
+                  <td data-label="Amount">$324.99</td>
+                  <td data-label="Status">
+                    <span class="status-label status-shipped">Shipped</span>
+                  </td>
+                  <td data-label="Items">4 items</td>
+                </tr>
+                <tr onclick="toggleSidebar()">
+                  <td data-label="Order ID">#ORD-2842</td>
+                  <td data-label="Customer">David Kim</td>
+                  <td data-label="Date">Oct 3, 2025</td>
+                  <td data-label="Amount">$189.50</td>
+                  <td data-label="Status">
+                    <span class="status-label status-pending">Pending</span>
+                  </td>
+                  <td data-label="Items">2 items</td>
+                </tr>
+                <tr onclick="toggleSidebar()">
+                  <td data-label="Order ID">#ORD-2841</td>
+                  <td data-label="Customer">Maria Garcia</td>
+                  <td data-label="Date">Oct 2, 2025</td>
+                  <td data-label="Amount">$445.00</td>
+                  <td data-label="Status">
+                    <span class="status-label status-delivered">Delivered</span>
+                  </td>
+                  <td data-label="Items">6 items</td>
+                </tr>
+                <tr onclick="toggleSidebar()">
+                  <td data-label="Order ID">#ORD-2840</td>
+                  <td data-label="Customer">Robert Taylor</td>
+                  <td data-label="Date">Oct 2, 2025</td>
+                  <td data-label="Amount">$78.25</td>
+                  <td data-label="Status">
+                    <span class="status-label status-shipped">Shipped</span>
+                  </td>
+                  <td data-label="Items">1 item</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer Info Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h3>Order Details</h3>
+          <div class="order-id">Order #ORD-2847</div>
+        </div>
+
+        <!-- Customer Section -->
+        <div class="customer-section">
+          <h4 class="section-title">Customer Information</h4>
+          <div class="customer-avatar"><img src="MEDIA/image3.jpeg" alt=""></div>
+          <div class="customer-name">Sarah Johnson</div>
+          <div class="customer-detail"> <i class="ph-bold ph-envelope"></i>sarah.johnson@email.com</div>
+          <div class="customer-detail"><i class="ph-bold ph-phone"></i> +1 (555) 123-4567</div>
+        </div>
+
+        <!-- Order Information -->
+        <div class="customer-section">
+          <h4 class="section-title">Order Information</h4>
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="info-label">Order Date</div>
+              <div class="info-value">October 5, 2025</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Status</div>
+              <div class="info-value">
+                <span class="status-label status-shipped">Shipped</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Tracking Number</div>
+              <div class="info-value">TRK9847562103<i class="ph-bold ph-copy"></i></div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Payment Method</div>
+              <div class="info-value">Visa •••• 4242<i class="ph-bold ph-eye-closed"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping Address -->
+        <div class="customer-section">
+          <h4 class="section-title">Shipping Address</h4>
+          <div class="info-item">
+            <div class="info-value">
+              123 Main Street<br />
+              Apartment 4B<br />
+              New York, NY 10001<br />
+              United States
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Items -->
+        <div class="customer-section">
+          <h4 class="section-title">Order Items</h4>
+          <ul class="order-items">
+            <li class="order-item">
+              <div class="item-header">
+                <span class="item-name">Wireless Headphones</span>
+                <span class="item-price">$149.99</span>
+              </div>
+              <div class="item-details">Qty: 1 • SKU: WH-BLK-001</div>
+            </li>
+            <li class="order-item">
+              <div class="item-header">
+                <span class="item-name">Phone Case</span>
+                <span class="item-price">$29.99</span>
+              </div>
+              <div class="item-details">Qty: 2 • SKU: PC-BLU-042</div>
+            </li>
+            <li class="order-item">
+              <div class="item-header">
+                <span class="item-name">USB-C Cable</span>
+                <span class="item-price">$15.99</span>
+              </div>
+              <div class="item-details">Qty: 3 • SKU: CB-WHT-015</div>
+            </li>
+          </ul>
+
+          <div class="total-section">
+            <div class="total-row">
+              <span>Subtotal</span>
+              <span>$245.96</span>
+            </div>
+            <div class="total-row">
+                <div class="content">
+                    <span>Shipping</span>
+                    <span>$15.00</span>
+                </div>
+            </div>
+            <div class="total-row">
+              <span>Tax</span>
+              <span>$24.04</span>
+            </div>
+            <div class="total-row grand-total">
+              <span>Total</span>
+              <span>$285.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="sidebar-actions">
+          <button class="btn btn-primary">Update Status</button>
+          <button class="btn btn-secondary">Send Invoice</button>
+          <button class="btn btn-secondary">Print Order</button>
+        </div>
+      </aside>
+    </div>
+    <!-- Overlay for mobile -->
+    <div class="overlay" onclick="toggleSidebar()"></div>
+    
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            
+            if (window.innerWidth <= 1024) {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            }
+        }
+        
+        // Close sidebar when window is resized to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024) {
+                document.querySelector('.sidebar').classList.remove('active');
+                document.querySelector('.overlay').classList.remove('active');
+            }
+        });
+    </script>
+  </body>
+</html>
